@@ -1,0 +1,121 @@
+:root {
+  --blue: #007bff;
+  --indigo: #6610f2;
+  --purple: #6f42c1;
+  --pink: #e83e8c;
+  --red: #dc3545;
+  --orange: #fd7e14;
+  --yellow: #ffc107;
+  --green: #28a745;
+  --teal: #20c997;
+  --cyan: #17a2b8;
+  --white: #fff;
+  --gray: #6c757d;
+  --gray-dark: #343a40;
+  --primary: #007bff;
+  --secondary: #6c757d;
+  --success: #28a745;
+  --info: #17a2b8;
+  --warning: #ffc107;
+  --danger: #dc3545;
+  --light: #f8f9fa;
+  --dark: #343a40;
+  --breakpoint-xs: 0;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  --font-family-sans-serif: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  --font-family-monospace: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  position: relative;
+  font-weight: normal;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--dark);
+  background: var(--white);
+  transition: color 0.5s, background-color 0.5s;
+  line-height: 1.6;
+  font-family: var(--font-family-sans-serif);
+  font-size: 16px;
+  text-rendering: optimizeLegibility;
+  background: 
+    url('https://images.squarespace-cdn.com/content/v1/604f9df10b428d6019bfb0a1/decfc0be-02a7-4fde-b6ab-3565977e4b24/Solutionsbc.png'),
+    radial-gradient(circle, 
+      rgba(92,139,195,1) 0%, 
+      rgba(41,98,119,1) 58%,
+      rgba(47,53,58,1) 100%
+    );
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position-x: right;
+  background-position-y: 80px;
+  background-size: cover;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .9rem;
+}
+
+table > thead > tr {
+  background: #656565;
+  color: #FFF;
+}
+
+table > thead > tr > th {
+  padding: 8px 12px;
+  white-space: nowrap;
+  position: relative;
+  border-top: 0;
+  vertical-align: bottom;
+  border: 1px solid #dee2e6;
+  border-width: 0 1px apx 1px;
+  padding: 0.75rem;
+  font-weight: 400;
+  text-align: inherit;
+}
+table > thead > tr > th:first-child {
+  border-left: 1px solid #656565;
+}
+table > thead > tr > th:last-child {
+  border-right: 1px solid #656565;
+}
+table > tbody > tr {
+  background-color: #FFF;
+}
+
+table > tbody > tr:nth-of-type(odd) {
+  background-color: #0000000d;
+}
+
+table > tbody > tr > td {
+  vertical-align: middle;
+  border: 1px solid #dee2e6;
+  border-width: 0 1px 1px 1px;
+  padding: 8px 12px;
+  font-weight: 400;
+  text-align: inherit;
+}
+table > tbody > tr > td:first-child {
+  white-space: nowrap;
+}
+
+/* primevue css overrides */
+.p-button {
+  padding: 0.5rem 1.25rem;
+}
