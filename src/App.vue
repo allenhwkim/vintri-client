@@ -10,7 +10,7 @@
 </script>
 
 <template>
-  <header class="header" :class="{ loggedIn: auth.token }">
+  <header class="app-header" :class="{ loggedIn: auth.token }">
     <div class="wrapper">
       <router-link to="/">
         <img src="@/assets/vintro-logo.png" height="60" alt="Logo">
@@ -30,23 +30,23 @@
 @import './assets/normalize.css';
 @import './assets/style.css';
 
-.header {
+.app-header {
   height: 100px;
   padding: 0 20px;
   background-color: var(--header-bg, #2d2925);
   color: var(--white, #fff);
 }
-.header a {
+.app-header a {
   color: var(--white, #fff);
   text-decoration: none; 
 }
 
-@media (min-width: 576px)  { .container, .header .wrapper { max-width: 540px; } }
-@media (min-width: 768px)  { .container, .header .wrapper { max-width: 720px; } }
-@media (min-width: 992px)  { .container, .header .wrapper { max-width: 960px; } }
-@media (min-width: 1200px) { .container, .header .wrapper { max-width: 1140px; } }
+@media (min-width: 576px)  { .container, .app-header .wrapper { max-width: 540px; } }
+@media (min-width: 768px)  { .container, .app-header .wrapper { max-width: 720px; } }
+@media (min-width: 992px)  { .container, .app-header .wrapper { max-width: 960px; } }
+@media (min-width: 1200px) { .container, .app-header .wrapper { max-width: 1140px; } }
 .container, 
-.header .wrapper {
+.app-header .wrapper {
   width: 100%;
   padding: 12px;
   margin: 3em auto 0 auto;
@@ -54,18 +54,19 @@
   border-radius: 8px;
   overflow: auto;
 }
-.header:not(.loggedIn) .wrapper,
+.app-header:not(.loggedIn) .wrapper,
 .container:not(.loggedIn) {
   width: 540px;
 }
-.header {
+.app-header {
   box-shadow: 0px 2px 4px rgba(255, 255, 255, 0.2);
 }
 .container {
-  box-shadow: 0 0 40px #fff;
+  max-height: calc(100vh - 200px);
+  box-shadow: 0 0 80px rgba(255, 255, 255, 0.5);
 }
 
-.header .wrapper {
+.app-header .wrapper {
   background-color: inherit;
   margin: 0 auto;
   display: flex;

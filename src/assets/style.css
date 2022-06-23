@@ -47,13 +47,9 @@ body {
   font-family: var(--font-family-sans-serif);
   font-size: 16px;
   text-rendering: optimizeLegibility;
-  background: 
-    url('https://images.squarespace-cdn.com/content/v1/604f9df10b428d6019bfb0a1/decfc0be-02a7-4fde-b6ab-3565977e4b24/Solutionsbc.png'),
-    radial-gradient(circle, 
-      rgba(92,139,195,1) 0%, 
-      rgba(41,98,119,1) 58%,
-      rgba(47,53,58,1) 100%
-    );
+  background-image: 
+    url('https://images.squarespace-cdn.com/content/v1/604f9df10b428d6019bfb0a1/decfc0be-02a7-4fde-b6ab-3565977e4b24/Solutionsbc.png');
+  background-color: #040231;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position-x: right;

@@ -5,13 +5,30 @@ export default {
   data() {
     return {
       beers: [],
+      name: '',
+      page: 1,
+      nameSearch: false,
     }
   },
   methods: {
-    async getBeers(page = 1) {
-      this.beers = axios.get(`/api/beers?per_page=10&page=${page}`)
-        .then(response => this.beers = response.data)
+    async getBeers() {
+      const url = this.name ? `/api/beers?name=${this.name}` : `/api/beers?per_page=10&page=${this.page}`; 
+      this.beers = axios.get(url)
+        .then(response => {
+          this.nameSearch = !!this.name;
+          this.beers = response.data
+        }).catch(e => {
+          if (e.response.status === 404) {
+            this.beers = [];
+          } else {
+            throw e;
+          }
+        })
     },
+    setPage(page = 1) {
+      this.page = page;
+      this.getBeers();
+    }
   },
   beforeRouteEnter (to, from, next) {
     axios.get('/api/beers?per_page=10&page=1')
@@ -23,8 +40,14 @@ export default {
 </script>
 
 <template>
-  <h1>Beers</h1>
-  <table class="beers">
+  <div class="header">
+    <h1>Beers</h1>
+    <InputText v-model="name" @keyup.enter="getBeers" placeholder="Search by name" />
+  </div>
+  <div class="not-found" v-if="!beers.length">
+    <p>Sorry, Could not find the beer name with "${name}".</p>
+  </div>
+  <table class="beers" v-if="beers.length">
     <thead>
       <tr>
         <th>ID</th><th>Name</th><th>Description</th><th>First Brewed</th><th>Action</th>
@@ -42,10 +65,21 @@ export default {
       </tr>
     </tbody>
   </table>
-  <Paginator :rows="10" :totalRecords="325" @page="getBeers($event.page + 1)"></Paginator>
+  <Paginator v-if="!nameSearch && beers.length"
+    :rows="10" 
+    :totalRecords="325" 
+    @page="setPage($event.page + 1)"></Paginator>
 </template>
 
 <style lang="scss" scoped>
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.not-found {
+  text-align: center;
+}
 .beers {
   border-collapse: collapse;
   .beer {

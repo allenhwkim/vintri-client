@@ -37,7 +37,7 @@ export default {
 </script>
 
 <template>
-  <h1>{{beer.name}}</h1>
+  <h1>Name: "{{beer.name}}"</h1>
   <p>
     {{beer.description}}
   </p>
