@@ -24,6 +24,27 @@ $ npm i
 $ npm start
 ```
 
+### Run test
+run `npm test` to run unit test
+```
+$ npm test
+
+> vintri-client@1.0.0 test
+> vue-cli-service test:unit
+
+ PASS  tests/unit/services/auth.spec.js
+ PASS  tests/unit/services/session-storage.spec.js
+ PASS  tests/unit/components/Beer.vue.spec.js
+ PASS  tests/unit/components/Beers.vue.spec.js
+ PASS  tests/unit/App.vue.spec.js
+
+Test Suites: 5 passed, 5 total
+Tests:       9 passed, 9 total
+Snapshots:   0 total
+Time:        3.554 s
+Ran all test suites.
+```
+
 ## Usage
 
 ### Login
