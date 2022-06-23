@@ -13,7 +13,7 @@
   <header class="app-header" :class="{ loggedIn: auth.token }">
     <div class="wrapper">
       <router-link to="/">
-        <img src="@/assets/vintro-logo.png" height="60" alt="Logo">
+        <img src="@/assets/vintri-logo.png" height="60" alt="Logo">
       </router-link>
       <div v-if="auth.token">
         <router-link to="/logout">Logout</router-link>
