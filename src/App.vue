@@ -58,6 +58,12 @@
 .container:not(.loggedIn) {
   width: 540px;
 }
+.header {
+  box-shadow: 0px 2px 4px rgba(255, 255, 255, 0.2);
+}
+.container {
+  box-shadow: 0 0 40px #fff;
+}
 
 .header .wrapper {
   background-color: inherit;
