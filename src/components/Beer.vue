@@ -38,9 +38,17 @@ export default {
 
 <template>
   <h1>Name: "{{beer.name}}"</h1>
-  <p>
+  <p class="description">
     {{beer.description}}
   </p>
+
+  <h2 class="sub-title">Food Parings</h2> 
+  <ul class="food-pairings">
+    <li v-for="(foodParing, index) in beer.food_pairing" :key="index">
+      {{foodParing}}
+    </li>
+  </ul>
+
   <p class="since">
     It is enjoyed since {{beer.first_brewed}}.
   </p>
@@ -79,6 +87,16 @@ export default {
   .since {
     padding: 1rem 0;
   }
+  .sub-title {
+    font-size: 1.2rem;
+  }
+  .description {
+    padding: 1rem 0;
+  }
+  .food-pairings {
+    margin-bottom: 1rem;
+  }
+
   .rating-block {
     display: flex; 
     flex-direction: column; 
