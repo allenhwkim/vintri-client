@@ -66,7 +66,8 @@ export default {
     </tbody>
   </table>
   <Paginator v-if="!nameSearch && beers.length"
-    :rows="10" 
+    :first="(page-1) * 10"
+    :rows="10"
     :totalRecords="325" 
     @page="setPage($event.page + 1)"></Paginator>
 </template>
