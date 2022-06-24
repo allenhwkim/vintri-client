@@ -45,7 +45,7 @@ export default {
     <InputText v-model="name" @keyup.enter="getBeers" placeholder="Search by name" />
   </div>
   <div class="not-found" v-if="!beers.length">
-    <p>Sorry, Could not find the beer name with "${name}".</p>
+    <p>Sorry, Could not find the beer name with "{{name}}".</p>
   </div>
   <table class="beers" v-if="beers.length">
     <thead>
